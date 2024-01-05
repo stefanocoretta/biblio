@@ -9,3 +9,7 @@ pandoc linguistics.bib -s --citeproc \
     --metadata title="Linguistic bibliography" \
     -H extra.html \
     -o index.html
+
+git add .
+git commit -m "edit bib"
+git push
