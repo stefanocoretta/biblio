@@ -10,6 +10,6 @@ pandoc linguistics.bib -s --citeproc \
     -H extra.html \
     -o index.html
 
-git add .
-git commit -m "edit bib"
-git push
+# git add .
+# git commit -m "edit bib"
+# git push
