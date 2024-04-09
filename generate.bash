@@ -8,7 +8,7 @@ pandoc linguistics.bib -s --citeproc \
     --csl "/Users/ste/.local/share/pandoc/csl/unified-style-sheet-for-linguistics.csl" \
     --metadata title="Linguistic bibliography" \
     -H extra.html \
-    -o index.html
+    -o docs/biblio.html
 
 # git add .
 # git commit -m "edit bib"

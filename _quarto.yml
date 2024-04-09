@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "assets/"
+
+website:
+  title: "Linguistic bibliography"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Search
+      - href: biblio.html
+        text: Bibliography
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

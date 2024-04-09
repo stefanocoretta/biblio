@@ -1,0 +1,51 @@
+---
+title: "Search bibliography"
+execute: 
+  echo: false
+  warning: false
+page-layout: full
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+library(bib2df)
+```
+
+```{r}
+ling <- bib2df("linguistics.bib") |> 
+  mutate(
+    AUTHOR = map(
+      AUTHOR,
+      function(x) {
+        str_flatten(unlist(x), collapse = " and ")
+      }
+    ),
+    AUTHOR = unlist(AUTHOR),
+    EDITOR = map(
+      EDITOR,
+      function(x) {
+        str_flatten(unlist(x), collapse = " and ")
+      }
+    ),
+    EDITOR = unlist(EDITOR),
+    YEAR = as.integer(YEAR),
+    TITLE = str_remove_all(TITLE, "[{}]"),
+    DOI = ifelse(is.na(DOI), NA, glue::glue('<a href="https://www.doi.org/{DOI}" target="_blank">{DOI}</a>'))
+  )
+```
+
+```{r}
+ling |> 
+  select(YEAR, AUTHOR, TITLE, JOURNAL, DOI, BOOKTITLE) |> 
+  DT::datatable(
+    escape = FALSE,
+    filter = list(position = "top"),
+    options = list(
+      pageLength = 100,
+      columnDefs = list(list(width = '200px', targets = "_all"))
+    )
+  )
+```
+
