@@ -3,8 +3,10 @@ title: "Bibliography"
 format: 
   html:
     page-layout: full
+bibliography: linguistics.bib
+nocite: |
+  @*
 ---
 
-```{=html}
-<iframe src="biblio-plain.html" width="100%" height="100%"></iframe>
-```
+::: {#refs}
+:::
