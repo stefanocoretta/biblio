@@ -2,7 +2,7 @@
 #
 # Generate bibliography
 
-cp /Users/ste/texmf/bibtex/bib/linguistics.bib .
+cp /Users/ste/texmf/bibtex/bib/references.bib .
 
 # pandoc linguistics.bib -s --citeproc \
 #     --csl "/Users/ste/.local/share/pandoc/csl/unified-style-sheet-for-linguistics.csl" \

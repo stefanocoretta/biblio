@@ -3,7 +3,7 @@ title: "Bibliography"
 format: 
   html:
     page-layout: full
-bibliography: linguistics.bib
+bibliography: references.bib
 nocite: |
   @*
 ---

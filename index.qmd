@@ -14,7 +14,7 @@ library(bib2df)
 ```
 
 ```{r}
-ling <- bib2df("linguistics.bib") |> 
+ling <- bib2df("references.bib") |> 
   mutate(
     AUTHOR = map(
       AUTHOR,
@@ -32,6 +32,7 @@ ling <- bib2df("linguistics.bib") |>
     EDITOR = unlist(EDITOR),
     YEAR = as.integer(YEAR),
     TITLE = str_remove_all(TITLE, "[{}]"),
+    AUTHOR = str_remove_all(AUTHOR, "[{}]"),
     DOI = ifelse(is.na(DOI), NA, glue::glue('<a href="https://www.doi.org/{DOI}" target="_blank">{DOI}</a>'))
   )
 ```
