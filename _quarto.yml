@@ -5,7 +5,7 @@ project:
     - "assets/"
 
 website:
-  title: "Linguistic bibliography"
+  title: "Stefano's bibliography"
   navbar:
     left:
       - href: index.qmd

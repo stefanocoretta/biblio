@@ -1,5 +1,5 @@
 ---
-title: "Bibliography"
+title: "References"
 format: 
   html:
     page-layout: full
